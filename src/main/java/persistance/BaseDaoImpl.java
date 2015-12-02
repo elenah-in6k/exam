@@ -5,19 +5,20 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
 /**
  * Created by employee on 12/2/15.
  */
 @Repository
 @Transactional
-public abstract class BaseDaoImpl<T> implements BaseDao<T> {
+public abstract class BaseDaoImpl<T>
+        implements BaseDao<T> {
     @Autowired
     protected SessionFactory sessionFactory;
+
     public Class<T> entityClass;
 
     public BaseDaoImpl() {

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by employee on 12/2/15.
  */
-@Repository
+
 public interface StudentDao extends BaseDao<Student> {
 
 }

@@ -12,14 +12,17 @@ import java.util.List;
  * Created by employee on 12/2/15.
  */
 @RestController
+@Controller
 @RequestMapping(value = "/")
 public class StudentController {
     @Autowired
     StudentService studentService;
+
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     List<Student> getStudents(){
         return studentService.getAllStudents();
     }
+
     @RequestMapping(value = "/students/", method = RequestMethod.POST)
     public void addCity(@RequestBody Student student) {
         studentService.createStudent(student);

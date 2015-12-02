@@ -1,13 +1,14 @@
 package core.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by employee on 12/2/15.
  */
 @Entity
 @Table(name = "marks")
-public class Mark {
+public class Mark implements Serializable {
     @Id
     @Column(name = "idStudent")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
