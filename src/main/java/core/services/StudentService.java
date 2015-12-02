@@ -11,24 +11,25 @@ import java.util.List;
 /**
  * Created by employee on 12/2/15.
  */
-@Service
+@Service("studentService")
 public class StudentService {
     @Autowired
     StudentDao studentDao;
 
-    List<Student> getAllStudents() {
+    public List<Student> getAllStudents() {
         return studentDao.getAll();
     }
 
-    Student createStudent(Student student) {
+    public Student createStudent(Student student) {
         return studentDao.create(student);
     }
 
-    Student findStudentById(int id) {
+    public Student findStudentById(int id) {
         return studentDao.read(id);
     }
 
-    void deleteStudent(Student student) {
+    public void deleteStudent(int id) {
+        Student student = findStudentById(id);
         studentDao.delete(student);
     }
 }
