@@ -8,7 +8,20 @@ studentsApp.controller('studentsCtrl', function ($scope, $http) {
         $scope.students = response.data;
     });
 
-    //$scope.delete = function()
+    $scope.deleteStudent = function(student){
+        $http
+            .delete('/students/' + student.id)
+            .then(function (response) {
+                update();
+            })
+    };
+
+    var update = function () {
+        $http
+            .get('/students').then(function (response) {
+            $scope.students = response.data;
+        });
+    };
 
 });
 
