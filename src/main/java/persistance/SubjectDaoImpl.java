@@ -1,4 +1,4 @@
-package core.dao;
+package persistance;
 
 import core.entity.Subject;
 import org.springframework.stereotype.Repository;
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by employee on 12/2/15.
  */
-@Repository
-public interface SubjectDao extends BaseDao<Subject> {
+@Repository("subjectDao")
+public class SubjectDaoImpl extends BaseDaoImpl<Subject>  {
 }

@@ -1,4 +1,4 @@
-package core.persistance;
+package persistance;
 
 import core.dao.BaseDao;
 import org.hibernate.Session;

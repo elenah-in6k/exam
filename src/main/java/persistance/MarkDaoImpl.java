@@ -1,4 +1,4 @@
-package core.dao;
+package persistance;
 
 import core.entity.Mark;
 import org.springframework.stereotype.Repository;
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by employee on 12/2/15.
  */
-@Repository
-public interface MarkDao extends BaseDao<Mark> {
+@Repository("markDao")
+public class MarkDaoImpl extends BaseDaoImpl<Mark> {
+
 }
