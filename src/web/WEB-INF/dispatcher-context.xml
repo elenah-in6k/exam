@@ -16,8 +16,8 @@
     <import resource="classpath:/root-context.xml"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/resources" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/resources/" />
+        <property name="suffix" value=".html" />
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>

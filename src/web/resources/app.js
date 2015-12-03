@@ -60,18 +60,18 @@ studentsApp.controller('subjectsCtrl', function ($scope, $http) {
 
 studentsApp.controller('marksCtrl', function ($scope, $http) {
 
-    //$scope.addMark = function (mark) {
-    //    $http
-    //        .post('/marks/', {name: mark.name})
-    //        .then(function (response) {
-    //            $scope.mark.name = "";
-    //            update();
-    //        });
-    //};
+    $scope.addMark = function (mark) {
+        $http
+            .post('/marks/', {name: mark.name})
+            .then(function (response) {
+                $scope.mark.name = "";
+                update();
+            });
+    };
 
     $scope.deleteMark = function(mark){
         $http
-            .delete('/marks/' + mark.id)
+            .delete('/marks/' + mark.idStudent )
             .then(function (response) {
                 update();
             })
@@ -90,8 +90,16 @@ studentsApp.config(['$routeProvider', '$locationProvider',
     function ($routeProvider, $locationProvider) {
         $routeProvider.
         when('/home', {
-            templateUrl: 'views/home.html',
+            templateUrl: 'resources/views/home.html',
+            controller: 'marksCtrl'
+        }).
+        when('/students', {
+            templateUrl: 'resources/views/students.html',
             controller: 'studentsCtrl'
+        }).
+        when('/subjects', {
+            templateUrl: 'resources/views/subjects.html',
+            controller: 'subjectsCtrl'
         }).
         otherwise({
             redirectTo: '/home'

@@ -1,17 +1,27 @@
 <div ng-controller="marksCtrl">
+
     <div class="container">
         <div class="jumbotron">
-            <h1>Subjects</h1>
+            <h1>Marks</h1>
         </div>
     </div>
     <div class="container">
         <div class="jumbotron">
 
             <table class="table-striped table-bordered" align="center">
-                <tr ng-repeat="mark in marks">
-                    <td>{{mark.idStudent}}
+                <tr >
+                    <td>Student
                     </td>
-                    <td>{{mark.idSubject}}
+                    <td>Subject
+                    </td>
+                    <td>Mark
+                    </td>
+                    <td>   </td>
+                </tr>
+                <tr ng-repeat="mark in marks">
+                    <td>{{mark.student.name}}
+                    </td>
+                    <td>{{mark.subject.name}}
                     </td>
                     <td>{{mark.mark}}
                     </td>
@@ -24,77 +34,12 @@
         </div>
     </div>
 
-    <!--<div class="container">-->
-    <!--<div class="jumbotron">-->
-    <!--<h3>Add subject</h3>-->
-    <!--Name: <input type="text" ng-model="mark.name"><br>-->
-    <!--<button ng-click="addMark(mark)">Add</button>-->
-
-    <!--</div>-->
-    <!--</div>-->
-</div>
-
-<div ng-controller="studentsCtrl">
     <div class="container">
-        <div class="jumbotron">
-            <h1>Students</h1>
-        </div>
+    <div class="jumbotron">
+    <h3>Add mark</h3>
+    Mark: <input type="number" ng-model="mark.name"><br>
+    <button ng-click="addMark(mark)">Add</button>
+
     </div>
-    <div class="container">
-        <div class="jumbotron">
-
-            <table class="table-striped table-bordered" align="center">
-                <tr ng-repeat="student in students">
-                    <td>{{student.name}}
-                    <td>
-                    <td>
-                        <button ng-click="deleteStudent(student)">Delete</button>
-
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="jumbotron">
-            <h3>Add students</h3>
-            Name: <input type="text" ng-model="student.name"><br>
-            <button ng-click="addStudent(student)">Add</button>
-
-        </div>
-    </div>
-</div>
-
-
-<div ng-controller="subjectsCtrl">
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Subjects</h1>
-        </div>
-    </div>
-    <div class="container">
-        <div class="jumbotron">
-
-            <table class="table-striped table-bordered" align="center">
-                <tr ng-repeat="subject in subjects">
-                    <td>{{subject.name}}
-                    <td>
-                    <td>
-                        <button ng-click="deleteSubject(subject)">Delete</button>
-
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="jumbotron">
-            <h3>Add subject</h3>
-            Name: <input type="text" ng-model="subject.name"><br>
-            <button ng-click="addSubject(subject)">Add</button>
-
-        </div>
     </div>
 </div>
