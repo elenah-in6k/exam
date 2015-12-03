@@ -60,11 +60,11 @@ studentsApp.controller('subjectsCtrl', function ($scope, $http) {
 
 studentsApp.controller('marksCtrl', function ($scope, $http) {
 
-    $scope.addMark = function (mark) {
+    $scope.addMark = function (newMark) {
         $http
-            .post('/marks/', {name: mark.name})
+            .post('/marks/', {mark: newMark.mark, student: newMark.student, subject: newMark.subject })
             .then(function (response) {
-                $scope.mark.name = "";
+
                 update();
             });
     };
@@ -85,6 +85,14 @@ studentsApp.controller('marksCtrl', function ($scope, $http) {
         $http
             .get('/marks/top').then(function (response) {
             $scope.markstop = response.data;
+        });
+        $http
+            .get('/marks/subjects').then(function (response) {
+            $scope.subjects = response.data;
+        });
+        $http
+            .get('/marks/students').then(function (response) {
+            $scope.students = response.data;
         });
     };
     update();

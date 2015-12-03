@@ -26,7 +26,7 @@
                     <td>{{mark.mark}}
                     </td>
                     <td>
-                        <button ng-click="deleteMark(mark)">Delete</button>
+                        <!--<button ng-click="deleteMark(mark)">Delete</button>-->
 
                     </td>
                 </tr>
@@ -53,10 +53,7 @@
                     </td>
                     <td>{{mark.mark}}
                     </td>
-                    <td>
-                        <button ng-click="deleteMark(mark)">Delete</button>
 
-                    </td>
                 </tr>
             </table>
         </div>
@@ -64,7 +61,24 @@
     <div class="container">
     <div class="jumbotron">
     <h3>Add mark</h3>
-    Mark: <input type="number" ng-model="mark.name"><br>
+       Student:
+
+        <select  id="student" ng-model="mark.student">
+
+            <option  ng-repeat="student in students" value="student">{{student.name}}
+            </option>
+
+        </select>
+        Subject:
+        <select  id="subject" ng-model="mark.subject">
+
+            <option  ng-repeat="subject in subjects" value="subject">{{subject.name}}
+            </option>
+
+        </select>
+
+
+    Mark: <input type="number" ng-model="mark.mark"><br>
     <button ng-click="addMark(mark)">Add</button>
 
     </div>
