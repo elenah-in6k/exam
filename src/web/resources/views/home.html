@@ -33,7 +33,34 @@
             </table>
         </div>
     </div>
+    <div class="container">
+        <div class="jumbotron">
+<h3>Top student in subject</h3>
+            <table class="table-striped table-bordered" align="center">
+                <tr >
+                    <td>Subject
+                </td>
+                    <td>Student
+                    </td>
+                    <td>Mark
+                    </td>
+                    <td>   </td>
+                </tr>
+                <tr ng-repeat="mark in markstop">
+                    <td>{{mark.subject.name}}
+                    </td>
+                    <td>{{mark.student.name}}
+                    </td>
+                    <td>{{mark.mark}}
+                    </td>
+                    <td>
+                        <button ng-click="deleteMark(mark)">Delete</button>
 
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
     <div class="container">
     <div class="jumbotron">
     <h3>Add mark</h3>

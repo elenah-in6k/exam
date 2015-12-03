@@ -12,5 +12,5 @@ import java.util.List;
 @Repository
 public interface MarkDao extends BaseDao<Mark> {
 
-    public List<Mark> getAllMarks();
+    public List<Mark> getTopMarks();
 }

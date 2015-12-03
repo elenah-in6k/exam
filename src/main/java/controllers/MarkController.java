@@ -25,6 +25,11 @@ public class MarkController {
         return markService.getAllMarks();
     }
 
+    @RequestMapping(value = "/marks/top", method = RequestMethod.GET)
+    List<Mark> getTopMark(){
+        return markService.getTopMarks();
+    }
+
     @RequestMapping(value = "/marks/", method = RequestMethod.POST)
     public void addMark(@RequestBody Mark mark) {
         markService.createMark(mark);

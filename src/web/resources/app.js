@@ -82,6 +82,10 @@ studentsApp.controller('marksCtrl', function ($scope, $http) {
             .get('/marks').then(function (response) {
             $scope.marks = response.data;
         });
+        $http
+            .get('/marks/top').then(function (response) {
+            $scope.markstop = response.data;
+        });
     };
     update();
 });

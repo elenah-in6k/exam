@@ -16,12 +16,11 @@ public class MarkDaoImpl extends BaseDaoImpl<Mark> implements MarkDao {
         super();
     }
 
-    public List<Mark> getAllMarks() {
-//        Query query = getSession()
-//                .createQuery("from core.entity.Mark m" +
-//                        "join core.entity.Student st on (m.idStudent = st.id)" +
-//                        "join core.entity.Subject sb on (m.idSubject = sb.id) ");
-//
-        return null;
+
+    public List<Mark> getTopMarks() {
+        Query query = getSession()
+                .createSQLQuery("select * from (select * from marks order by mark desc) as T  group by idSubject;").addEntity(Mark.class);
+        return query.list();
     }
 }
+

@@ -22,6 +22,10 @@ public class MarkService {
         return markDao.getAll();
     }
 
+    public List<Mark> getTopMarks() {
+        return markDao.getTopMarks();
+    }
+
     public Mark createMark(Mark mark) {
         return markDao.create(mark);
     }
