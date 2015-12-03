@@ -61,8 +61,9 @@ studentsApp.controller('subjectsCtrl', function ($scope, $http) {
 studentsApp.controller('marksCtrl', function ($scope, $http) {
 
     $scope.addMark = function (newMark) {
+       
         $http
-            .post('/marks/', {mark: newMark.mark, student: newMark.student, subject: newMark.subject })
+            .post('/marks/', newMark)
             .then(function (response) {
 
                 update();
