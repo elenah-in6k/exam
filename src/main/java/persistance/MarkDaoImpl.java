@@ -9,5 +9,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("markDao")
 public class MarkDaoImpl extends BaseDaoImpl<Mark> implements MarkDao {
-
+    public MarkDaoImpl() {
+        super();
+    }
 }

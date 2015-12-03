@@ -1,3 +1,39 @@
+<div ng-controller="marksCtrl">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Subjects</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+
+            <table class="table-striped table-bordered" align="center">
+                <tr ng-repeat="mark in marks">
+                    <td>{{mark.idStudent}}
+                    </td>
+                    <td>{{mark.idSubject}}
+                    </td>
+                    <td>{{mark.mark}}
+                    </td>
+                    <td>
+                        <button ng-click="deleteMark(mark)">Delete</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!--<div class="container">-->
+    <!--<div class="jumbotron">-->
+    <!--<h3>Add subject</h3>-->
+    <!--Name: <input type="text" ng-model="mark.name"><br>-->
+    <!--<button ng-click="addMark(mark)">Add</button>-->
+
+    <!--</div>-->
+    <!--</div>-->
+</div>
+
 <div ng-controller="studentsCtrl">
     <div class="container">
         <div class="jumbotron">
@@ -20,12 +56,45 @@
         </div>
     </div>
 
-    <!--<div class="container">-->
-        <!--<div class="jumbotron">-->
-            <!--<h3>Add city</h3>-->
-            <!--Name: <input type="text" ng-model="student.name"><br>-->
-            <!--<button ng-click="addStudent(student)">Add</button>-->
+    <div class="container">
+        <div class="jumbotron">
+            <h3>Add students</h3>
+            Name: <input type="text" ng-model="student.name"><br>
+            <button ng-click="addStudent(student)">Add</button>
 
-        <!--</div>-->
-    <!--</div>-->
+        </div>
+    </div>
+</div>
+
+
+<div ng-controller="subjectsCtrl">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Subjects</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+
+            <table class="table-striped table-bordered" align="center">
+                <tr ng-repeat="subject in subjects">
+                    <td>{{subject.name}}
+                    <td>
+                    <td>
+                        <button ng-click="deleteSubject(subject)">Delete</button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h3>Add subject</h3>
+            Name: <input type="text" ng-model="subject.name"><br>
+            <button ng-click="addSubject(subject)">Add</button>
+
+        </div>
+    </div>
 </div>

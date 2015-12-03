@@ -24,13 +24,13 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/students/", method = RequestMethod.POST)
-    public void addCity(@RequestBody Student student) {
+    public void addStudents(@RequestBody Student student) {
         studentService.createStudent(student);
 
     }
 
     @RequestMapping(value = "/students/{id}", method = RequestMethod.DELETE)
-    public void deleteCity(@PathVariable("id") Integer id) {
+    public void deleteStudents(@PathVariable("id") Integer id) {
         studentService.deleteStudent(id);
 
     }

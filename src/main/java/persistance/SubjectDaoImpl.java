@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("subjectDao")
 public class SubjectDaoImpl extends BaseDaoImpl<Subject> implements SubjectDao {
+    public SubjectDaoImpl() {
+        super();
+    }
 }
